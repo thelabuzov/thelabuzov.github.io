@@ -21,13 +21,42 @@ a {
 	}
 }
 
-.links {
-	font-size: 0;
+svg {
+	filter: drop-shadow(0 0 rem(10) var(--aqua));
+	fill: var(--aqua);
 
+	&:hover {
+		filter: drop-shadow(0 0 rem(10) var(--pink));
+		fill: var(--pink);
+	}
+}
+
+.links {
 	&--vertical {
-		@include breakpoint(large) {
-			display: inline-flex;
-			flex-direction: column;
+		display: inline-flex;
+		flex-direction: column;
+
+		svg {
+			width: 0;
+			height: 0;
+		}
+
+		@include breakpoint-down(large) {
+			transform: scale(.75);
+			flex-direction: row;
+
+			a {
+				margin: 0 rem(20);
+
+				span {
+					display: none;
+				}
+
+				svg {
+					width: rem(50);
+					height: rem(50);
+				}
+			}
 		}
 	}
 

@@ -11,8 +11,18 @@
 	min-height: 100vh;
 	margin: 0 auto;
 
-	&__item:not(:last-child) {
-		margin-bottom: rem(40);
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: rem(40);
+		}
+
+		img {
+			width: rem(50);
+
+			@include breakpoint(large) {
+				width: rem(75);
+			}
+		}
 	}
 }
 
